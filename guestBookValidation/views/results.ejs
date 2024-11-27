@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+</head>
+<body>
+    <div id="main">
+        <h1>Guests</h1>
+        <% if (data.length === 0) { %>
+            <p>No data available.</p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Job</th>
+                        <th>Company</th>
+                        <th>LinkedIn</th>
+                        <th>Email</th>
+                        <th>How We Met</th>
+                        <th>Other</th>
+                        <th>Comment</th>
+                        <th>Mailing List</th>
+                        <th>HTML</th>
+                        <th>Text</th>
+                        <th>Date Submitted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(row => { %>
+                        <tr>
+                            <td><%= row.id %></td>
+                            <td><%= row.fname %></td>
+                            <td><%= row.lname %></td>
+                            <td><%= row.job %></td>
+                            <td><%= row.company %></td>
+                            <td><%= row.linkedin %></td>
+                            <td><%= row.email %></td>
+                            <td><%= row.meet %></td>
+                            <td><%= row.other %></td>
+                            <td><%= row.comment %></td>
+                            <td><%= row.mailing %></td>
+                            <td><%= row.html %></td>
+                            <td><%= row.text %></td>
+                            <td><%= row.date_submitted %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>

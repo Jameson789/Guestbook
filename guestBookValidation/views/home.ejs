@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="icon" type="image/x-icon" href="book.png">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <form method="POST" action="/success">
+    <div id="main">
+        <h1>Contact Form</h1>
+
+        <div class="row">
+            <label for="first-name">First Name</label>
+            <input id="first-name" class="pinfo" type="text" name="fname">
+            <!-- Invisible error message -->
+            <p id="first-name-error" class="error" style="display:none;">First name is required.</p>
+        </div>
+
+        <div class="row">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" class="pinfo" type="text" name="lname">
+            <!-- Invisible error message -->
+            <p id="last-name-error" class="error" style="display:none;">Last name is required.</p>
+        </div>
+
+        <div class="row">
+            <label for="job-title">Job Title</label>
+            <input id="job-title" class="pinfo" type="text" name="job">
+        </div>
+
+        <div class="row">
+            <label for="company">Company</label>
+            <input id="company" class="pinfo" type="text" name="company">
+        </div>
+
+        <div class="row">
+            <label for="linkedin">LinkedIn URL</label>
+            <input id="linkedin" class="pinfo" type="text" name="linkedin">
+            <!-- Invisible error message -->
+            <p id="linkedin-error" class="error" style="display:none;">Invalid LinkedIn URL. Must start with 'https://linkedin.com/in/'.</p>
+        </div>
+
+        <div class="row">
+            <label for="email">Email Address</label>
+            <input id="email" class="pinfo" type="text" name="email">
+            <!-- Invisible error message -->
+            <p id="email-error" class="error" style="display:none;">Invalid email address.</p>
+        </div>
+
+        <div class="row">
+            <label for="menu">How did we meet?</label>
+            <select id="menu" name="menu">
+                <option value="none">Please Select</option>
+                <option value="event">Event</option>
+                <option value="work">Work</option>
+                <option value="zoom">Zoom</option>
+                <option value="other">Other</option>
+            </select>
+            <!-- Invisible error message -->
+            <p id="menu-error" class="error" style="display:none;">Please select how we met.</p>
+        </div>
+
+        <div class="row" id="other-row" style="display:none;">
+            <label for="other">Other (please specify)</label>
+            <input id="other" class="pinfo" type="text" name="other">
+        </div>
+
+        <div class="row full-width">
+            <label for="comment">Message</label>
+            <textarea id="comment" name="comment" rows="5"></textarea>
+        </div>
+
+        <div class="row full-width">
+            <label>
+                <input type="checkbox" id="mailing-list" name="mailing"> Please add me to your mailing list
+            </label>
+        </div>
+
+        <div class="email-format full-width" id="email-format" style="display:none;">
+            <legend>Choose an email format:</legend>
+            <label for="html">
+                <input type="radio" id="html" name="html"> HTML
+            </label>
+            <label for="text">
+                <input type="radio" id="text" name="text"> Text
+            </label>
+        </div>
+        
+        
+        <div class="submit-row full-width">
+            <button type="submit" value="Submit" onclick="return validateForm()">Submit</button>
+        </div>
+    </div>
+    </form>
+
+</body>
+
+</html>
